@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Gamepad2, Menu, X } from "lucide-react";
+import { Gamepad2, Menu, X, Search } from "lucide-react";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,49 +16,66 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const links = [
+    { name: "HOME", href: "#", active: true },
+    { name: "GAMES", href: "#games", active: false },
+    { name: "TOURNAMENTS", href: "#tournaments", active: false },
+    { name: "COMMUNITY", href: "#community", active: false },
+    { name: "BLOG", href: "#blog", active: false },
+    { name: "SHOP", href: "#shop", active: false },
+  ];
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 border-b-4 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
-          ? "bg-[#16213e]/90 backdrop-blur-md border-[#e94560] py-2"
-          : "bg-transparent border-transparent py-5"
+          ? "bg-[#0b0b0f]/90 backdrop-blur-md py-3 shadow-lg"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        <motion.div 
-          whileHover={{ scale: 1.1, rotate: 5 }}
-          className="flex items-center gap-3 cursor-pointer"
-        >
-          <div className="w-10 h-10 rounded-full bg-[#e94560] flex items-center justify-center shadow-[0_0_15px_#e94560]">
-            <Gamepad2 className="w-6 h-6 text-white" />
-          </div>
-          <span className="font-display text-2xl tracking-widest text-white uppercase drop-shadow-[0_2px_2px_rgba(233,69,96,0.5)]">
-            Aetheria
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="flex items-center gap-2 cursor-pointer">
+          <Gamepad2 className="w-8 h-8 text-white" />
+          <span className="font-display text-2xl tracking-wide text-white font-bold uppercase">
+            GAMEON
           </span>
-        </motion.div>
+        </div>
 
-        <nav className="hidden md:flex items-center gap-10">
-          <a href="#world" className="text-sm font-display tracking-widest text-gray-300 hover:text-[#e94560] transition-colors uppercase">World</a>
-          <a href="#characters" className="text-sm font-display tracking-widest text-gray-300 hover:text-[#e94560] transition-colors uppercase">Characters</a>
-          <a href="#combat" className="text-sm font-display tracking-widest text-gray-300 hover:text-[#e94560] transition-colors uppercase">Combat</a>
-          <a href="#news" className="text-sm font-display tracking-widest text-gray-300 hover:text-[#e94560] transition-colors uppercase">News</a>
+        <nav className="hidden lg:flex items-center gap-8">
+          {links.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href} 
+              className={`text-sm font-semibold tracking-wider uppercase transition-colors ${
+                link.active ? "text-pink-500" : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-6">
+          <button className="text-gray-300 hover:text-white transition-colors">
+            <Search className="w-5 h-5" />
+          </button>
+          <a href="#login" className="text-sm font-semibold tracking-wider text-gray-300 hover:text-white uppercase transition-colors">
+            LOGIN
+          </a>
           <button 
             onClick={() => window.dispatchEvent(new CustomEvent('open-modal'))}
-            className="btn-game text-sm py-2 px-6"
+            className="bg-gradient-pink-purple text-white text-sm font-bold tracking-wider uppercase py-2 px-6 rounded-lg hover:shadow-[0_0_15px_rgba(236,72,153,0.5)] transition-all hover:-translate-y-0.5"
           >
-            Play Free Now
+            SIGN UP
           </button>
         </div>
 
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button 
             className="text-white p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -70,18 +87,28 @@ export function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="absolute top-full left-0 right-0 bg-[#0f3460] border-b-4 border-[#e94560] overflow-hidden md:hidden shadow-2xl"
+            className="absolute top-full left-0 right-0 bg-[#0b0b0f] border-t border-white/10 overflow-hidden lg:hidden"
           >
             <div className="flex flex-col p-6 gap-6">
-              <a href="#world" className="text-xl font-display text-center text-white hover:text-[#e94560]" onClick={() => setMobileMenuOpen(false)}>World</a>
-              <a href="#characters" className="text-xl font-display text-center text-white hover:text-[#e94560]" onClick={() => setMobileMenuOpen(false)}>Characters</a>
-              <a href="#combat" className="text-xl font-display text-center text-white hover:text-[#e94560]" onClick={() => setMobileMenuOpen(false)}>Combat</a>
-              <a href="#news" className="text-xl font-display text-center text-white hover:text-[#e94560]" onClick={() => setMobileMenuOpen(false)}>News</a>
+              {links.map((link) => (
+                <a 
+                  key={link.name}
+                  href={link.href} 
+                  className={`text-lg font-semibold tracking-wider uppercase ${
+                    link.active ? "text-pink-500" : "text-gray-300"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+              <div className="h-px bg-white/10 w-full my-2"></div>
+              <a href="#login" className="text-lg font-semibold tracking-wider text-gray-300 uppercase" onClick={() => setMobileMenuOpen(false)}>Login</a>
               <button 
                 onClick={() => { setMobileMenuOpen(false); window.dispatchEvent(new CustomEvent('open-modal')); }}
-                className="btn-game w-full"
+                className="bg-gradient-pink-purple text-white text-lg font-bold tracking-wider uppercase py-3 rounded-lg w-full"
               >
-                Play Free Now
+                Sign Up
               </button>
             </div>
           </motion.div>
