@@ -5,13 +5,7 @@
     <strong>A premium, ultra-polished landing page built for Acdyon Technologies Frontend Challenge.</strong>
   </p>
   
-  <p align="center">
-    <h3>🌐 Live Demo: <a href="https://acdyon-seven.vercel.app/">https://acdyon-seven.vercel.app/</a></h3>
-  </p>
-
-  <p align="center">
-    [![Nexus Landing Page Preview](public/preview.png)](https://acdyon-seven.vercel.app/)
-  </p>
+  <h3>🌐 Live Demo: <a href="https://acdyon-seven.vercel.app/">https://acdyon-seven.vercel.app/</a></h3>
 
   <p align="center">
     <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js" alt="Next.js"></a>
@@ -20,6 +14,12 @@
     <a href="https://reactjs.org/"><img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" alt="React"></a>
   </p>
 </div>
+
+<br />
+
+[![Nexus Landing Page Preview](./public/preview.png)](https://acdyon-seven.vercel.app/)
+
+<br />
 
 <br />
 
