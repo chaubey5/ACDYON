@@ -10,9 +10,7 @@
   </p>
 
   <p align="center">
-    <a href="https://acdyon-seven.vercel.app/">
-      <img src="./public/preview.png" alt="Nexus Landing Page Preview" width="800" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-    </a>
+    [![Nexus Landing Page Preview](public/preview.png)](https://acdyon-seven.vercel.app/)
   </p>
 
   <p align="center">
