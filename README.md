@@ -4,6 +4,17 @@
   <p align="center">
     <strong>A premium, ultra-polished landing page built for Acdyon Technologies Frontend Challenge.</strong>
   </p>
+  
+  <p align="center">
+    <h3>🌐 Live Demo: <a href="https://acdyon-seven.vercel.app/">https://acdyon-seven.vercel.app/</a></h3>
+  </p>
+
+  <p align="center">
+    <a href="https://acdyon-seven.vercel.app/">
+      <img src="./public/preview.png" alt="Nexus Landing Page Preview" width="800" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+    </a>
+  </p>
+
   <p align="center">
     <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js" alt="Next.js"></a>
     <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=flat-square&logo=tailwind-css" alt="Tailwind CSS"></a>
