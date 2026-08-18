@@ -20,28 +20,30 @@ export default function Home() {
       <Pricing />
       
       {/* Final CTA Section */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-white dark:bg-black border-t border-gray-100 dark:border-white/5">
-        <div className="absolute inset-0 bg-blue-50 dark:bg-blue-900/10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-500/20 rounded-full blur-[100px] pointer-events-none" />
+      <section className="py-32 relative overflow-hidden bg-[#16213e] border-t-4 border-[#e94560]">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-[#e94560]/20 to-blue-500/20 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900 dark:text-white">Ready to accelerate?</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-10">
-            Join thousands of engineering teams building the future on Nexus.
+          <h2 className="text-5xl md:text-7xl font-display tracking-widest text-white mb-6 drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]" style={{ WebkitTextStroke: '2px #0f3460' }}>
+            THE VOID AWAITS
+          </h2>
+          <p className="text-2xl text-gray-300 font-bold mb-10 max-w-2xl mx-auto">
+            Pre-register now to unlock the exclusive "Crimson Vanguard" skin at launch.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-modal'))}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 dark:bg-white text-white dark:text-black font-semibold hover:bg-blue-700 dark:hover:bg-gray-200 transition-colors shadow-lg shadow-blue-500/20 dark:shadow-none"
+              className="btn-game w-full sm:w-auto text-xl py-5 px-12 shadow-[0_0_30px_rgba(233,69,96,0.6)]"
             >
-              Get Started for Free
+              PRE-REGISTER NOW
             </button>
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('open-modal'))}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-transparent text-gray-900 dark:text-white font-medium border border-gray-200 dark:border-white/20 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group shadow-sm dark:shadow-none"
+              className="btn-game-outline w-full sm:w-auto text-xl py-5 px-12 bg-[#0a192f]"
             >
               <span className="hidden konami-target">↑↑↓↓←→←→BA</span>
-              Contact Sales
+              WATCH TRAILER
             </button>
           </div>
         </div>
